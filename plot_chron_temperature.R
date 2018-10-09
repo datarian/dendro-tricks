@@ -60,7 +60,7 @@ plot_log10 <- ggplot(data=data_plot_log10, aes(x=Jahr, y=Wert, color=Reihe)) +
 
 # Zweiter Ansatz: Die einzelnen Reihen werden zentriert und reduziert, d.h. der
 # Mittelwert wird von jedem Einzelwert subtrahiert, anschliessend wird durch die
-# Standardabweichung dividiert. Alle Werte sind dann im Intervall [-1,1]
+# Standardabweichung dividiert.
 joined_data_centered <- cbind(joined_data[1],apply(joined_data[,2-3],2,scale))
 
 data_plot_centered <- reshape2::melt(joined_data_centered, id.vars = "Jahr", variable.name="Reihe", value.name="Wert")
